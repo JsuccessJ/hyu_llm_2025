@@ -26,7 +26,7 @@
 | 이름   | Prefix        |
 |--------|---------------|
 | 재성   | `jaesung`    |
-| 민주   | `minju`       |
+| 민주   | `minjoo`       |
 | 단익   | `danik`       |
 | 유진   | `yujin`       |
 | 주현   | `joohyun`     |
@@ -49,6 +49,6 @@
 - `main`  
 - `develop`  
 - `feature/jaeseong/model-training`  
-- `feature/minju/data-cleaning`  
+- `feature/minjoo/data-cleaning`  
 - `bugfix/joohyun/null-error`  
 - `hotfix/seunghwan/login-crash`  
