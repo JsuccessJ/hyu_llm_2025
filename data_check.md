@@ -12,3 +12,7 @@
 - 'url', 'name', 'target', 'brand_name', 'accords', 'rating_value', 'best_rating', 'rating_count', 'review_count', 'short_description', 'detailed_description', 'seasonal', 'time_of_day', 'pros', 'cons'
 - 사용할 10개의 key만 추출
 - **'name', 'target', 'brand_name', 'accords', 'short_description', 'detailed_description', 'seasonal', 'time_of_day', 'pros', 'cons'**
+
+### 🔧 향수 정보 -> instruction tuning 전처리
+- Template1
+- 
