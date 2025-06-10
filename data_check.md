@@ -14,11 +14,27 @@
   **'name', 'target', 'brand_name', 'accords', 'short_description', 'detailed_description', 'seasonal', 'time_of_day', 'pros', 'cons'**
 
 ### 🔧 향수 정보 -> instruction tuning 전처리
-- Template1
-  - instruction: Given any given perfume, answer which scent is the strongest. (번역: 주어진 어떤 향수의 향 중에서 가장 강한 향은 무엇인지 답하세요.)
-  - input: vanilla: 100%, lavender: 56.6092%, fresh spicy: 49.2696%, cacao: 45.3949%.
-  - output: vanilla
-- Template2
-  - instruction: Summarize the description of the entered perfume. (번역: 입력된 향수의 설명을 요약해주세요.)
-  - input: Fragrance has always been a great love of mine, and I am fascinated with the power that scent can have and...
-  - output: Goddess by Burberry is a Aromatic fragrance for women. This is a new fragrance...
+- **Template1**
+  - **instruction:** Answer which of the given scents is the strongest. (번역: 주어진 향 중에서 가장 강한 향은 무엇인지 답하세요.)
+  - **input:** vanilla: 100%, lavender: 56.6092%, fresh spicy: 49.2696%, cacao: 45.3949%.
+  - **output:** vanilla
+    
+- **Template2**
+  - **instruction:** Summarize the description of the entered perfume. (번역: 입력된 향수의 설명을 요약해주세요.)
+  - **input:** Fragrance has always been a great love of mine, and I am fascinated with the power that scent can have and...
+  - **output:** Goddess by Burberry is a Aromatic fragrance for women. This is a new fragrance...
+    
+- **Template3**
+  - **instruction:** Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate. (번역: 어떤 향수가 어울리는 계절을 수치로 표시한 정보가 주어졌을 때, 가장 어울리는 계절은 무엇인지 답하세요.)
+  - **input:** spring: 63.2391%, summer: 41.7738%, fall: 100%, winter: 91.0797%.
+  - **output:** fall
+    
+- **Template4**
+  - **instruction:** Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day. (번역: 어떤 향수가 사용하기 적합한 시간대를 수치로 표시한 정보가 주어졌을 때, 적합한 시간대를 답하세요.)
+  - **input:** day: 88.8432%, night: 74.4216%.
+  - **output:** day
+    
+- **Template5**
+  - **instruction:** Determine the relationship between the following given sentences. (번역: 다음 주어진 문장간의 관계를 파악하세요.)
+  - **input:** Fragrance has always been a great love of mine, and I am fascinated with the power that scent can have and... Goddess by Burberry is a Aromatic fragrance for women. This is a new fragrance...
+  - **output:** Summarization
