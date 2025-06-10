@@ -1,4 +1,4 @@
-#  Sample data 데이터 확인
+#  Sample data 데이터 확인 and 전처리 예시
 
 ## 존재하는 key
 - successful_count: 크롤링에 성공한 수
