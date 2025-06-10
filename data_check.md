@@ -15,6 +15,10 @@
 
 ### 🔧 향수 정보 -> instruction tuning 전처리
 - Template1
-  - instruction:
-  - input:
-  - output:
+  - instruction: Given any given perfume, answer which scent is the strongest. (번역: 주어진 어떤 향수의 향 중에서 가장 강한 향은 무엇인지 답하세요.)
+  - input: vanilla: 100%, lavender: 56.6092%, fresh spicy: 49.2696%, cacao: 45.3949%.
+  - output: vanilla
+- Template2
+  - instruction: Summarize the description of the entered perfume. (번역: 입력된 향수의 설명을 요약해주세요.)
+  - input: Fragrance has always been a great love of mine, and I am fascinated with the power that scent can have and...
+  - output: Goddess by Burberry is a Aromatic fragrance for women. This is a new fragrance...
