@@ -1,0 +1,23 @@
+basic_prompt:
+  template: |
+    다음 질문에 대해 한국어로 친절하게 답변해 주세요.
+    질문: {query}
+    답변:
+  input_variables:
+    - query
+
+emotional_prompt:
+  template: |
+    사용자의 질문에 향수 전문가처럼 감성적으로 대답해 주세요.
+    질문: {query}
+    답변:
+  input_variables:
+    - query
+
+concise_korean_prompt:
+  template: |
+    아래 질문에 대해 핵심만 간결하게 요약하여 한국어로 답변해 주세요.
+    질문: {query}
+    답변:
+  input_variables:
+    - query
