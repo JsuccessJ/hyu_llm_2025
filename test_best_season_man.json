@@ -1,0 +1,402 @@
+[
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 20.8955%, summer: 8.95522%, fall: 82.0896%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 80.8824%, summer: 36.7647%, fall: 97.0588%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 91.6667%, summer: 66.6667%, fall: 91.6667%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 76%, spring: 100%, summer: 46%, fall: 94%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 14.9223%, spring: 86.5285%, summer: 100%, fall: 44.6632%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 0%, summer: 0%, fall: 100%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 20.122%, spring: 87.6016%, summer: 100%, fall: 48.9837%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 6.73077%, spring: 83.6538%, summer: 100%, fall: 35.5769%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 8.69565%, spring: 78.2609%, summer: 100%, fall: 26.087%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 94.186%, spring: 27.907%, summer: 18.6047%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 88.4615%, spring: 96.1538%, summer: 57.6923%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 67.1053%, spring: 100%, summer: 76.3158%, fall: 95.3947%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 67.5325%, spring: 70.1299%, summer: 33.7662%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 36.1905%, summer: 5.71429%, fall: 94.2857%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 66.6667%, summer: 33.3333%, fall: 66.6667%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 42.9412%, spring: 100%, summer: 98.7395%, fall: 83.7815%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 40.2778%, summer: 13.8889%, fall: 98.6111%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 16.3265%, spring: 100%, summer: 93.8776%, fall: 57.1429%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 57.1429%, spring: 100%, summer: 78.5714%, fall: 89.2857%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 20%, spring: 100%, summer: 86.6667%, fall: 60%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 95.664%, spring: 33.3333%, summer: 13.2791%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 10.6383%, spring: 100%, summer: 85.1064%, fall: 27.6596%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 31.4286%, spring: 94.2857%, summer: 100%, fall: 58.5714%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 20.2128%, summer: 8.51064%, fall: 87.234%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 26.0997%, summer: 14.956%, fall: 93.5484%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 35.4354%, summer: 15.3153%, fall: 92.1922%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 70.5882%, summer: 29.4118%, fall: 88.2353%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 39.6154%, summer: 12.3077%, fall: 86.9231%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 7.69231%, spring: 92.3077%, summer: 100%, fall: 38.4615%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 57.8554%, spring: 100%, summer: 32.6683%, fall: 98.7531%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 43.2432%, summer: 16.2162%, fall: 94.5946%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 50%, spring: 81.6176%, summer: 52.9412%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 55.5556%, summer: 44.4444%, fall: 77.7778%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 98.0769%, spring: 90.3846%, summer: 36.5385%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 90%, spring: 100%, summer: 70%, fall: 100%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 65.8824%, summer: 30.5882%, fall: 96.4706%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 53.4335%, spring: 89.485%, summer: 90.7725%, fall: 82.618%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 2.75229%, spring: 68.8073%, summer: 100%, fall: 15.5963%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 43.0894%, summer: 13.8211%, fall: 86.9919%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 26.5728%, summer: 10.5164%, fall: 87.1362%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 20%, spring: 100%, summer: 80%, fall: 20%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 95.122%, spring: 100%, summer: 90.2439%, fall: 97.561%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 90%, spring: 70%, summer: 60%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 98.0583%, spring: 52.4272%, summer: 28.1553%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 92%, spring: 100%, summer: 100%, fall: 92%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 96.7742%, spring: 51.6129%, summer: 8.06452%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 48.7952%, summer: 24.0964%, fall: 93.3735%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 54%, summer: 11%, fall: 87%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 45.8333%, summer: 16.6667%, fall: 100%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 40%, summer: 26.6667%, fall: 90.4762%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 83.2168%, spring: 95.8042%, summer: 70.979%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 50%, spring: 100%, summer: 90.2778%, fall: 91.6667%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 64.6341%, summer: 24.3902%, fall: 95.122%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 20%, spring: 100%, summer: 70%, fall: 40%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 68.1818%, spring: 59.0909%, summer: 63.6364%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 23.3766%, summer: 12.987%, fall: 76.6234%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 66.6667%, spring: 66.6667%, summer: 0%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 26.5896%, summer: 9.24855%, fall: 82.659%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 91.716%, spring: 36.0947%, summer: 28.4024%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 50%, spring: 50%, summer: 100%, fall: 50%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 49.1166%, spring: 100%, summer: 62.8975%, fall: 92.5795%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 16.2651%, spring: 89.1566%, summer: 100%, fall: 38.5542%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 18.3024%, spring: 76.9231%, summer: 100%, fall: 39.2573%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 99.5169%, spring: 82.1256%, summer: 42.9952%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 41.3043%, spring: 93.4783%, summer: 92.3913%, fall: 78.8043%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 50.6849%, summer: 16.4384%, fall: 98.6301%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 45.4545%, spring: 90.9091%, summer: 95.4545%, fall: 54.5455%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 28.2609%, spring: 88.0435%, summer: 86.9565%, fall: 44.5652%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 87.5%, spring: 79.1667%, summer: 29.1667%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 30.9091%, summer: 16.3636%, fall: 100%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 68.144%, summer: 20.6371%, fall: 96.1219%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 33.3333%, summer: 0%, fall: 66.6667%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 18.239%, spring: 75.4717%, summer: 100%, fall: 41.5094%",
+    "output": "summer"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 38.5714%, summer: 14.7619%, fall: 94.7619%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 43.75%, spring: 93.75%, summer: 87.5%, fall: 62.5%",
+    "output": "spring"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 95.5056%, spring: 75.2809%, summer: 19.1011%, fall: 100%",
+    "output": "fall"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 92.8571%, spring: 85.7143%, summer: 42.8571%, fall: 92.8571%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 53.8462%, summer: 38.4615%, fall: 100%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 100%, spring: 69.4175%, summer: 27.6699%, fall: 97.0874%",
+    "output": "winter"
+  },
+  {
+    "instruction": "Given a numerical representation of the seasons for which a perfume is appropriate, answer which season is the most appropriate.",
+    "input": "winter: 28.5714%, spring: 100%, summer: 100%, fall: 50%",
+    "output": "spring"
+  }
+]

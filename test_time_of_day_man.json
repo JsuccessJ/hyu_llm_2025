@@ -1,0 +1,402 @@
+[
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 93.2039%, night: 43.0421%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 71.4286%, night: 89.6104%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 60%, night: 80%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 100%, night: 100%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 35.7143%, night: 82.1429%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 95.8333%, night: 75%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 90.2778%, night: 62.5%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 89.6552%, night: 13.7931%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 57.5676%, night: 89.1892%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 85.1064%, night: 32.6241%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 78.7798%, night: 56.4987%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 73.2143%, night: 98.2143%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 49.4624%, night: 86.0215%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 94.3239%, night: 89.1486%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 50%, night: 90%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 75.2%, night: 88.8%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 51.1628%, night: 86.0465%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 86.9231%, night: 34.6154%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 100%, night: 75%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 91.4286%, night: 32.8571%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 68.1818%, night: 77.2727%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 82.8571%, night: 85.7143%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 73.3333%, night: 73.3333%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 93.3333%, night: 33.3333%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 63.4615%, night: 84.6154%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 94.5078%, night: 32.8497%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 93.2331%, night: 95.6391%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 94.9495%, night: 94.9495%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 75%, night: 96.875%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 94%, night: 80%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 71.5789%, night: 87.3684%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 90.4348%, night: 68.6957%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 79.4416%, night: 81.2183%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 90%, night: 50%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 63.4204%, night: 77.4347%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 69.6296%, night: 80%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 80%, night: 100%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 100%, night: 54.0541%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 70%, night: 20%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 78.125%, night: 65.625%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 100%, night: 66.6667%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 62.766%, night: 85.1064%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 37.8033%, night: 84.802%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 91.8367%, night: 59.1837%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 63.2184%, night: 96.5517%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 79.0419%, night: 98.8024%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 86.2745%, night: 31.3725%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 96.0961%, night: 31.2312%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 50%, night: 89.2857%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 78.1395%, night: 24.186%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 95.8333%, night: 87.5%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 92.8571%, night: 24.2857%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 87.3434%, night: 30.4511%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 77.7778%, night: 82.2222%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 52.9412%, night: 84.3137%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 87.3239%, night: 40.8451%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 54.8673%, night: 85.8407%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 100%, night: 66.6667%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 0%, night: 100%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 75%, night: 25%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 60%, night: 95.2941%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 90.8333%, night: 31.6667%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 91.6084%, night: 93.007%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 47.3988%, night: 95.9538%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 68.75%, night: 93.75%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 94.2529%, night: 81.6092%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 63.7931%, night: 87.931%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 73.9645%, night: 73.9645%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 65.5926%, night: 88.6076%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 60.0698%, night: 90.8033%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 92.8571%, night: 57.1429%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 94.9622%, night: 67.5521%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 39.6825%, night: 79.3651%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 55.6701%, night: 84.5361%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 71.4286%, night: 57.1429%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 88.0597%, night: 74.6269%",
+    "output": "day"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 72.2222%, night: 88.8889%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 57.1429%, night: 71.4286%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 41.0256%, night: 87.1795%",
+    "output": "night"
+  },
+  {
+    "instruction": "Given a numerical representation of the time of day when a perfume is appropriate to wear, answer the appropriate time of day.",
+    "input": "day: 97.2973%, night: 53.5135%",
+    "output": "day"
+  }
+]
