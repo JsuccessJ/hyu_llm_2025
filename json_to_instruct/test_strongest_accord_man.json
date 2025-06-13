@@ -1,0 +1,402 @@
+[
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "amber: 100%, musky: 54.8769%, balsamic: 50.9246%, wine: 46.154%, animalic: 45.4%, woody: 44.7538%, aromatic: 44.2692%",
+    "output": "amber"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fruity: 100%, vanilla: 94.351%, warm spicy: 86.9824%, sweet: 78.8771%, white floral: 64.3859%, patchouli: 59.4737%, aromatic: 58.9824%, floral: 51.6143%, amber: 49.6493%, balsamic: 48.2984%",
+    "output": "fruity"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "sweet: 100%, amber: 83.3334%, cacao: 82.4999%, woody: 81.9165%, vanilla: 71.6667%, animalic: 68.4998%, warm spicy: 61.4997%, powdery: 57.5832%, fruity: 54.5831%, balsamic: 52.2502%",
+    "output": "sweet"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, citrus: 87.3624%, fruity: 77.2316%, musky: 74.619%, powdery: 72.4305%, green: 65.2647%, fresh: 59.3698%, mossy: 57.5342%, fresh spicy: 56.3689%, amber: 51.1093%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "amber: 100%, woody: 98.2823%, warm spicy: 88.0053%, balsamic: 69.2657%, powdery: 56.288%, vanilla: 51.2603%, aromatic: 50.5539%, earthy: 48.6148%, iris: 46.3433%",
+    "output": "amber"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "oud: 100%, woody: 65%, animalic: 51%",
+    "output": "oud"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "vanilla: 100%, powdery: 78.4976%, almond: 76.311%, sweet: 64.122%, amber: 60.283%, iris: 59.4393%, floral: 51.5715%, leather: 51.0036%, nutty: 50.9691%, fruity: 47.4741%",
+    "output": "vanilla"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "citrus: 100%, vanilla: 91.25%, aromatic: 78.1251%, amber: 73.7501%, fresh spicy: 65.0002%, sweet: 65.0002%, warm spicy: 51%, woody: 45.7498%",
+    "output": "citrus"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "marine: 100%, aromatic: 95.7077%, citrus: 85.4241%, salty: 67.9866%, fresh spicy: 61.4228%, aquatic: 57.1486%, amber: 52.892%, ozonic: 52.1767%, white floral: 51.4614%, green: 51.0678%",
+    "output": "marine"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "aromatic: 100%, citrus: 75.9307%, vanilla: 73.5811%, warm spicy: 71.4446%, powdery: 69.9492%, amber: 65.8191%, balsamic: 56.0275%, sweet: 55.707%, fresh spicy: 52.5739%, woody: 52.4311%",
+    "output": "aromatic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, aromatic: 88.3121%, fresh spicy: 68.8322%, conifer: 46.7975%, warm spicy: 45.8394%, camphor: 44.8175%, powdery: 44.3064%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "earthy: 100%, fresh spicy: 97.6419%, vanilla: 88.7468%, woody: 79.4799%, aromatic: 69.4058%, amber: 68.4749%, warm spicy: 60.9042%, herbal: 55.1948%, soft spicy: 53.8709%, animalic: 53.3335%",
+    "output": "earthy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "amber: 100%, smoky: 69.2131%, warm spicy: 65.564%, balsamic: 60.2226%, leather: 59.8577%, fresh spicy: 55.8769%, sweet: 48.8435%, animalic: 47.5829%, vanilla: 46.5876%, tobacco: 45.9242%",
+    "output": "amber"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "powdery: 100%, iris: 95.1165%, woody: 68.5272%, violet: 62.558%, vanilla: 60.3876%, earthy: 59.3024%, citrus: 57.6745%, musky: 51.7054%, warm spicy: 45.4651%",
+    "output": "powdery"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fresh spicy: 100%, citrus: 86.0491%, aromatic: 83.112%, rose: 69.7728%, warm spicy: 61.5124%, woody: 60.105%, coffee: 58.1468%, herbal: 53.252%, vanilla: 52.2727%, fresh: 46.5212%",
+    "output": "fresh spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "amber: 100%, oud: 85.3071%, sweet: 71.092%, white floral: 68.2252%, rose: 57.4744%, powdery: 55.1451%, woody: 51.9794%, warm spicy: 50.6656%, citrus: 50.4865%, animalic: 46.4847%",
+    "output": "amber"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "rose: 100%, citrus: 54.8044%, floral: 54.8044%",
+    "output": "rose"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, cinnamon: 76.5878%, amber: 69.3701%, sweet: 67.756%, vanilla: 60.0722%, citrus: 58.2151%, chocolate: 55.8266%, woody: 48.0054%, smoky: 46.7978%, balsamic: 44.5932%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "leather: 100%, warm spicy: 78.0234%, amber: 74.7673%, smoky: 55.7751%, metallic: 53.0621%, animalic: 45.4651%",
+    "output": "leather"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, woody: 98.2425%, aromatic: 92.9706%, patchouli: 85.6485%, cinnamon: 82.7196%, earthy: 82.1341%, leather: 79.7906%, animalic: 54.8953%, anis: 51.0876%, balsamic: 46.6944%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "ozonic: 100%, aquatic: 92.9998%, citrus: 86.4983%, amber: 76.1128%, coconut: 70.9198%, sweet: 56.7328%, animalic: 48.9435%, fruity: 48.3204%, lactonic: 44.3219%",
+    "output": "ozonic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, vanilla: 85.3486%, amber: 78.837%, aromatic: 65%, powdery: 59.6277%, musky: 56.0465%, fresh spicy: 54.4187%, balsamic: 46.6045%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fruity: 100%, leather: 100%, oud: 83.0302%, sweet: 82.3941%, rose: 75.8182%, warm spicy: 75.0759%, animalic: 63.303%, powdery: 59.1667%, metallic: 56.5151%, iris: 55.4544%",
+    "output": "fruity"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "leather: 100%, tobacco: 88.3939%, aromatic: 88.152%, warm spicy: 61.8569%, animalic: 57.5044%, woody: 56.235%, earthy: 56.235%, sweet: 53.5753%, balsamic: 49.9482%, metallic: 48.7394%",
+    "output": "leather"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "sweet: 100%, warm spicy: 76.1861%, fruity: 66.2826%, vanilla: 63.0745%, woody: 54.6036%, powdery: 52.0111%, cinnamon: 51.2625%, tropical: 50.1569%, amber: 44.2341%",
+    "output": "sweet"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, fruity: 81.4143%, sweet: 81.4143%, tobacco: 77.573%, fresh spicy: 69.8901%, vanilla: 65.458%, amber: 63.6851%, aromatic: 47.6993%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, warm spicy: 99.2255%, smoky: 94.4247%, amber: 93.4956%, oud: 91.9467%, nutty: 84.5132%, aromatic: 80.1769%, balsamic: 77.0797%, leather: 70.2654%, musky: 60.8184%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "aromatic: 100%, fresh spicy: 83.3738%, leather: 74.3363%, fruity: 67.5154%, oud: 62.3995%, citrus: 60.6941%, woody: 57.2836%, animalic: 57.2836%, amber: 48.7577%, soft spicy: 48.7577%",
+    "output": "aromatic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "aromatic: 100%, woody: 92.1007%, lavender: 89.6167%, amber: 88.1262%, green: 88.1262%, fresh spicy: 76.948%, musky: 64.8756%, mossy: 54.8405%, powdery: 48.68%, earthy: 47.3883%",
+    "output": "aromatic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, caramel: 78.9998%, oud: 75.1108%, citrus: 72.7776%, amber: 64.9998%, woody: 64.8444%, aromatic: 64.3775%, balsamic: 62.7442%, smoky: 61.1108%, patchouli: 58%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "vanilla: 100%, rum: 74.8302%, woody: 71.9432%, patchouli: 66.6036%, citrus: 61.6979%, warm spicy: 59.5095%, powdery: 54.1698%, balsamic: 51.4812%, sweet: 49.6036%, fresh spicy: 45.8491%",
+    "output": "vanilla"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "aromatic: 100%, citrus: 98.7467%, woody: 93.6952%, amber: 73.755%, fresh spicy: 63.9935%, warm spicy: 58.79%, powdery: 53.5485%, green: 51.0036%, balsamic: 46.9244%, animalic: 46.4082%",
+    "output": "aromatic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "sweet: 100%, vanilla: 68.664%, honey: 59.2045%, musky: 57.7123%, powdery: 51.0239%, white floral: 48.919%, citrus: 44.2558%",
+    "output": "sweet"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "coffee: 100%, vanilla: 89.0828%, lavender: 85.2294%, woody: 76.2387%, sweet: 58.5782%, aromatic: 57.9679%, powdery: 56.9725%, citrus: 55.0461%, fresh spicy: 51.5782%, lactonic: 50.9999%",
+    "output": "coffee"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fresh spicy: 100%, citrus: 80.5555%, aromatic: 77.8333%, woody: 63.0554%, herbal: 54.8889%, rose: 45.5557%",
+    "output": "fresh spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "vanilla: 100%, warm spicy: 99.7711%, chocolate: 81.2358%, powdery: 75.4132%, sweet: 72.7606%, musky: 61.4267%, woody: 53.5473%, cacao: 49.2134%, cinnamon: 47.7749%, amber: 45.8506%",
+    "output": "vanilla"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fruity: 100%, leather: 84.8252%, mossy: 77.9721%, sweet: 76.6996%, smoky: 73.8603%, amber: 72.0982%, citrus: 70.14%, woody: 69.5524%, earthy: 63.5804%, white floral: 61.3287%",
+    "output": "fruity"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, aromatic: 95.4983%, earthy: 57.3679%, citrus: 54.5061%, iris: 52.3593%, fresh spicy: 50.8988%, powdery: 50.3619%, balsamic: 46.4865%, warm spicy: 45.6816%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, sweet: 94.1468%, vanilla: 86.1654%, woody: 70.1432%, cinnamon: 68.4289%, rum: 65.4731%, amber: 60.5065%, caramel: 58.9696%, cacao: 53.6487%, coffee: 50.6924%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "yellow floral: 100%, sweet: 81.3333%, citrus: 76.6667%, white floral: 76.6667%, woody: 58%, fruity: 53.3333%",
+    "output": "yellow floral"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "white floral: 100%, aromatic: 98.5996%, green: 98.2814%, citrus: 94.2723%, fresh spicy: 94.0181%, marine: 75.0541%, fresh: 74.7999%, musky: 69.4544%, floral: 57.5546%, powdery: 55.7092%",
+    "output": "white floral"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, patchouli: 97.8788%, woody: 70.7274%, earthy: 61.3938%, oud: 55.4545%, metallic: 51.2122%, balsamic: 50.3635%, leather: 46.9695%, musky: 46.9695%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "vanilla: 100%, lavender: 98.9661%, aromatic: 80.9157%, woody: 53.3293%, powdery: 50.9999%, fresh spicy: 50.69%, earthy: 49.9967%, sweet: 47.4482%",
+    "output": "vanilla"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, fruity: 94.4638%, sweet: 93.8489%, powdery: 76.9329%, vanilla: 74.5341%, amber: 71.8278%, cinnamon: 71.8278%, tobacco: 66.1687%, rum: 61.494%, honey: 60.7555%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fruity: 100%, sweet: 93.732%, cherry: 71.6189%, powdery: 68.9114%, vanilla: 58.2806%, almond: 52.038%, woody: 50.7091%, musky: 50.0572%, nutty: 47.6254%, amber: 44.7925%",
+    "output": "fruity"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "green: 100%, woody: 89.5268%, leather: 88.4976%, aromatic: 75.4732%, earthy: 71.0873%, mossy: 66.7009%, animalic: 62.4938%, musky: 55.9593%, smoky: 51.931%, warm spicy: 47.4554%",
+    "output": "green"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "citrus: 100%, woody: 92.2049%, green: 90.7646%, aromatic: 87.524%, fresh: 66.3657%, fresh spicy: 60.9463%, white floral: 60.8136%, earthy: 52.1646%, sweet: 50.9922%, floral: 47.5745%",
+    "output": "citrus"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fruity: 100%, sweet: 80.9091%, musky: 72.06%, woody: 71.7869%, powdery: 61.3538%, amber: 59.7154%, white floral: 55.1268%, animalic: 54.1435%, vanilla: 51.303%, fresh: 49.3911%",
+    "output": "fruity"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, marine: 70.5263%, aromatic: 66.1053%, powdery: 55.863%, warm spicy: 48.8632%, lavender: 47.6843%, salty: 46.2105%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fresh spicy: 100%, oud: 98.6734%, woody: 96.0981%, sweet: 91.6495%, citrus: 86.9677%, fruity: 84.7824%, fresh: 78.6952%, patchouli: 76.8226%, earthy: 76.3547%, warm spicy: 74.2474%",
+    "output": "fresh spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "vanilla: 100%, amber: 68.9992%, aromatic: 67.1576%, green: 54.9522%, fresh spicy: 53.6884%, sweet: 51.0342%, lavender: 50.583%, warm spicy: 48.0189%",
+    "output": "vanilla"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, musky: 91.2498%, fruity: 89.0624%, powdery: 82.5%, sweet: 82.5%, warm spicy: 73.7498%, amber: 65%, tropical: 62.8127%, aromatic: 51.8751%, fresh: 49.6873%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "citrus: 100%, coffee: 80.2468%, aromatic: 76.4073%, fresh spicy: 65%, woody: 62.4073%, warm spicy: 60.1481%, earthy: 51.7777%, green: 44.2593%",
+    "output": "citrus"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "aromatic: 100%, citrus: 79.5067%, green: 72.9439%, marine: 67.9936%, woody: 63.3306%, fresh spicy: 61.9491%, musky: 53.3718%, powdery: 52.2204%, earthy: 49.9176%, soft spicy: 48.8817%",
+    "output": "aromatic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, aromatic: 98.4785%, warm spicy: 72.1015%, conifer: 58.9132%, amber: 57.8985%, balsamic: 53.3332%, leather: 51.3044%, sweet: 49.7825%, smoky: 48.261%, fresh spicy: 44.2029%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "white floral: 100%, tuberose: 66.0367%, musky: 49.6473%, animalic: 47.7469%",
+    "output": "white floral"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "tobacco: 100%, fruity: 95.4989%, smoky: 89.2086%, cinnamon: 87.5048%, vanilla: 82.3935%, sweet: 81.3288%, warm spicy: 76.0039%, fresh: 66.5617%, green: 59.2495%, woody: 52.4338%",
+    "output": "tobacco"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, almond: 65.7379%, oud: 59.5225%, powdery: 56.454%, animalic: 55.9488%, vanilla: 54.8613%, nutty: 51.4429%, warm spicy: 50.6658%, sweet: 49.345%, fruity: 48.4904%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "ozonic: 100%, leather: 90.1755%, aquatic: 81.5788%, musky: 72.9825%, powdery: 55.7896%, green: 52.1052%",
+    "output": "ozonic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, aromatic: 93.0615%, patchouli: 63.9208%, fresh spicy: 59.2953%, amber: 57.7532%, camphor: 55.903%, marine: 54.6698%, lavender: 51.586%, warm spicy: 46.9604%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "green: 100%, coconut: 84.7038%, sweet: 76.5745%, vanilla: 62.5025%, aquatic: 60.7657%, woody: 60.5295%, aromatic: 57.7523%, fruity: 56.4129%, fresh spicy: 51.9996%, fresh: 50.7697%",
+    "output": "green"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "sweet: 100%, tobacco: 78.4519%, amber: 64.7449%, warm spicy: 63.6612%, fruity: 62.9601%, vanilla: 59.135%, leather: 54.0348%, woody: 52.1221%, aromatic: 51.6119%, balsamic: 48.8067%",
+    "output": "sweet"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, warm spicy: 74.9998%, sweet: 59.0001%, leather: 57.9998%, amber: 57.9998%, musky: 56.0001%, earthy: 53.9999%, rose: 51.9997%, citrus: 50.9999%, mossy: 50%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, smoky: 55.8234%, earthy: 55.0549%, fruity: 53.3641%, musky: 53.2106%, aromatic: 52.9799%, leather: 51.5197%, powdery: 51.2122%, white floral: 50.7509%, patchouli: 48.4455%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "green: 100%, woody: 92.1249%, aromatic: 82.6751%, fresh spicy: 64.825%, citrus: 50.9998%, leather: 49.25%, earthy: 45.7499%, ozonic: 45.7499%",
+    "output": "green"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "aquatic: 100%, ozonic: 97.5724%, citrus: 85.6361%, marine: 82.6011%, aromatic: 74.1041%, white floral: 64.3934%, sweet: 51.4452%, fresh: 51.0408%, salty: 51.0408%, amber: 48.2083%",
+    "output": "aquatic"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "earthy: 100%, woody: 85.2222%, fruity: 79.7778%, white floral: 76.6663%, iris: 68.8889%, sweet: 68.8889%, aromatic: 68.111%, mossy: 61.1111%, powdery: 58.0001%, fresh spicy: 53.3332%",
+    "output": "earthy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "cherry: 100%, warm spicy: 84.4252%, sweet: 79.9803%, fresh spicy: 55.8299%, vanilla: 52.5399%, metallic: 52.0499%, patchouli: 50.9998%, leather: 47.6399%, nutty: 47.5%, amber: 46.1002%",
+    "output": "cherry"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "amber: 100%, woody: 93.9059%, sweet: 63.4351%, fruity: 61.2942%, vanilla: 61.1295%, aromatic: 55.9413%, fresh spicy: 53.8825%, warm spicy: 53.2234%, white floral: 44.8237%",
+    "output": "amber"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "amber: 100%, fresh spicy: 94.2007%, warm spicy: 63.4483%, woody: 50.0373%, balsamic: 48.5229%, citrus: 46.1408%, aromatic: 45.1158%",
+    "output": "amber"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, woody: 81.8297%, aromatic: 76.7661%, soft spicy: 65.7445%, lavender: 59.7874%, cinnamon: 53.8298%, citrus: 53.8298%, amber: 50.8508%, patchouli: 50.8508%, earthy: 49.0638%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "vanilla: 100%, musky: 90.1539%, animalic: 84.5119%, powdery: 76.92%, coffee: 67.8901%, amber: 64.1567%, warm spicy: 62.7458%, sweet: 62.3309%, tobacco: 48.5304%, woody: 44.9347%",
+    "output": "vanilla"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "leather: 100%, smoky: 81%, asphault: 66.8002%, aromatic: 62%, animalic: 59.3%, woody: 57.2002%, gasoline: 53.9999%, mineral: 52.8001%, musky: 47.9999%",
+    "output": "leather"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "fresh spicy: 100%, warm spicy: 94.0272%, woody: 88.5012%, herbal: 76.9458%, oud: 73.5407%, green: 65.6141%, aromatic: 59.9203%, animalic: 59.2506%, earthy: 57.9105%, sweet: 57.9105%",
+    "output": "fresh spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "woody: 100%, warm spicy: 71.1126%, citrus: 57.4085%, powdery: 57.1324%",
+    "output": "woody"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "citrus: 100%, aromatic: 49.6363%, woody: 46.9546%",
+    "output": "citrus"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "citrus: 100%, white floral: 86.0001%, warm spicy: 86.0001%, aromatic: 69.6666%, amber: 62.6666%, fresh: 54.2668%, fresh spicy: 53.7999%, powdery: 51.7002%, musky: 48.6667%, floral: 46.1001%",
+    "output": "citrus"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "warm spicy: 100%, woody: 68.0183%, fresh spicy: 64.9358%, powdery: 62.0459%, amber: 59.5413%, citrus: 54.4037%, metallic: 51.8349%, aromatic: 48.2385%, leather: 47.4679%, mossy: 45.4128%",
+    "output": "warm spicy"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "leather: 100%, woody: 79.7778%, tobacco: 72.5184%, animalic: 64.9998%, fruity: 62.4591%, floral: 61.7334%, sweet: 51.2594%, smoky: 51.0001%, powdery: 46.6444%",
+    "output": "leather"
+  },
+  {
+    "instruction": "Answer which of the given scents is the strongest.",
+    "input": "vanilla: 100%, nutty: 92.5909%, woody: 80.9672%, citrus: 68.3211%, sweet: 66.916%, fruity: 66.7881%, rum: 65.7665%, fresh: 56.5694%, powdery: 50.6933%, green: 48.3943%",
+    "output": "vanilla"
+  }
+]
