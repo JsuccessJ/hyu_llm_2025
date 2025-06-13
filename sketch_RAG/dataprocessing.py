@@ -2,121 +2,134 @@ import json
 from pathlib import Path
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-# 입력 JSON 파일들
-input_files = [
-    "../data/raw_data/perfumes_complete_man_data.json",
-    "../data/raw_data/perfumes_complete_woman_data.json"
-]
+# 안전한 숫자 변환 함수들
+def safe_int(val, default=0):
+    try:
+        return int(str(val).replace(",", ""))
+    except (TypeError, ValueError):
+        return default
 
-# 텍스트 청크 분할 도구
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=350,
-    chunk_overlap=30
-)
+def safe_float(val, default=0.0):
+    try:
+        return float(str(val).replace("%", ""))
+    except (TypeError, ValueError):
+        return default
 
-def preprocess_entries(entries, gender):
-    docs = []
+def create_llm_text(entry):
+    name = entry.get("name", "Unknown")
+    brand = entry.get("brand_name", "Unknown")
+    target = entry.get("target", "unisex")
+    rating = safe_float(entry.get("rating_value", 0))
+    rating_count = safe_int(entry.get("rating_count", "0"))
+    review_count = safe_int(entry.get("review_count", "0"))
 
-    for idx, entry in enumerate(entries):
-        brand = entry.get("brand_name", "")
-        name = entry.get("name", "")
-        short_desc = entry.get("short_description", "")
-        rating_value = entry.get("rating_value", "N/A")
-        rating_count = entry.get("rating_count", "0")
-        review_count = entry.get("review_count", "0")
-        seasonal = entry.get("seasonal", {})
+    accords = sorted(entry.get("accords", []), key=lambda x: safe_float(x.get("strength", "0")), reverse=True)
+    top_accords = ", ".join([f"{a['accord']} ({a['strength']})" for a in accords[:3]])
 
-        # 상위 5개 accords 가져오기 (각 accord는 딕셔너리로 유지)
-        accords_raw = entry.get("accords", [])[:5]
-        accords_text = ", ".join([f"{a['accord']} ({a['strength']})" for a in accords_raw])
+    seasonal = [
+        k for k, v in entry.get("seasonal", {}).items()
+        if isinstance(v, str) and safe_float(v) >= 50
+    ]
+    time_of_day = [
+        k for k, v in entry.get("time_of_day", {}).items()
+        if isinstance(v, str) and safe_float(v) >= 50
+    ]
 
-        # 검색용 본문 구성
-        full_text = f"""{brand} - {name}
+    season_str = ", ".join(seasonal)
+    time_str = ", ".join(time_of_day)
 
-Short Description:
-{short_desc}
+    text = f"{name} by {brand} is a {target} fragrance with dominant accords of {top_accords}. "
+    text += f"It holds a rating of {rating} out of 5 based on {rating_count} ratings and {review_count} reviews. "
 
-Main Accords:
-{accords_text}
+    if entry.get("short_description"):
+        text += entry["short_description"] + " "
 
-Rating: {rating_value} ({rating_count} ratings, {review_count} reviews)
-""".strip()
+    if season_str:
+        text += f"Best suited for {season_str}"
+        if time_str:
+            text += f", especially at {time_str}."
+        else:
+            text += ". "
 
-        chunks = text_splitter.split_text(full_text)
+    if entry.get("detailed_description"):
+        text += "\n\n" + entry["detailed_description"]
 
-        for i, chunk in enumerate(chunks):
-            docs.append({
-                "perfume_id": f"{gender[:1]}_{idx:04}",
-                "brand_name": brand,
-                "accords": accords_raw,
-                "rating_value": rating_value,
-                "rating_count": rating_count,
-                "review_count": review_count,
-                "short_description": short_desc,
-                "seasonal": seasonal,
-                "gender": gender,
-                "chunk_index": i,
-                "text_chunk": chunk
-            })
+    return text.strip()
 
-    return docs
+def create_metadata(entry):
+    accords = sorted(entry.get("accords", []), key=lambda x: safe_float(x.get("strength", "0")), reverse=True)
+    accord_list = [a["accord"] for a in accords]
+    accord_strengths = {
+        a["accord"]: round(safe_float(a.get("strength", "0")) / 100, 4)
+        for a in accords
+    }
 
-# 전체 청크 리스트
-all_chunks = []
+    seasonal = [
+        k for k, v in entry.get("seasonal", {}).items()
+        if isinstance(v, str) and safe_float(v) >= 50
+    ]
+    time_of_day = [
+        k for k, v in entry.get("time_of_day", {}).items()
+        if isinstance(v, str) and safe_float(v) >= 50
+    ]
 
-# 각 JSON 파일 순회
-for file_path in input_files:
-    gender = "male" if "men" in file_path else "female"
-    with open(file_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-        entries = data.get("perfumes_data", [])
-        chunks = preprocess_entries(entries, gender)
-        all_chunks.extend(chunks)
+    return {
+        "name": entry.get("name", ""),
+        "brand_name": entry.get("brand_name", ""),
+        "target": entry.get("target", ""),
+        "accords": accord_list,
+        "accord_strengths": accord_strengths,
+        "rating_value": safe_float(entry.get("rating_value", 0)),
+        "review_count": safe_int(entry.get("review_count", 0)),
+        "rating_count": safe_int(entry.get("rating_count", 0)),
+        "seasonal": seasonal,
+        "time_of_day": time_of_day
+    }
 
-# 결과를 JSONL로 저장
-output_path = Path("./perfumes_docs.jsonl")
-with output_path.open("w", encoding="utf-8") as f:
-    for chunk in all_chunks:
-        f.write(json.dumps(chunk, ensure_ascii=False) + "\n")
+def convert_perfume_json_to_hybrid_jsonl(input_paths, output_path):
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=350, chunk_overlap=30)
+    all_entries = []
 
-print(f"✅ 총 청크 수: {len(all_chunks)}")
-# ✅ 총 청크 수: 5609
+    for input_path in input_paths:
+        with open(input_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            all_entries.extend(data.get("perfumes_data", []))
 
-'''
-# 출력 JSONL 예시 (1개 청크)
-{
-  "perfume_id": "m_0000",
-  "brand_name": "Parfums de Marly",
-  "accords": [
-    {"accord": "sweet", "strength": "100%"},
-    {"accord": "vanilla", "strength": "97.571%"},
-    {"accord": "warm spicy", "strength": "89.562%"},
-    {"accord": "cinnamon", "strength": "68.0724%"},
-    {"accord": "musky", "strength": "65.573%"}
-  ],
-  "rating_value": "4.40",
-  "rating_count": "6,655",
-  "review_count": "1106",
-  "short_description": "Althaïr by Parfums de Marly is a Oriental Vanilla fragrance for men...",
-  "seasonal": {
-    "winter": "100%",
-    "spring": "33.526%",
-    "summer": "14.1137%",
-    "fall": "90.7274%"
-  },
-  "gender": "male",
-  "chunk_index": 0,
-  "text_chunk": "Parfums de Marly - Althaïr Parfums de Marly for men\n\nShort Description:\nAlthaïr by Parfums de Marly is a Oriental Vanilla fragrance for men...\n\nMain Accords:\nsweet (100%), vanilla (97.571%), warm spicy (89.562%), cinnamon (68.0724%), musky (65.573%)\n\nRating: 4.40 (6,655 ratings, 1106 reviews)"
-}
+    total_docs = 0
+    total_chunks = 0
 
-# text_chunk
-f"""{brand} - {name}
+    with open(output_path, "w", encoding="utf-8") as f_out:
+        for idx, entry in enumerate(all_entries):
+            text_full = create_llm_text(entry)
+            text_chunks = text_splitter.split_text(text_full)
+            metadata = create_metadata(entry)
 
-Short Description:
-{short_desc}
+            record = {
+                "perfume_id": f"p_{idx:05}",
+                "metadata": metadata,
+                "text_full": text_full,
+                "text_chunks": text_chunks
+            }
+            json.dump(record, f_out, ensure_ascii=False)
+            f_out.write("\n")
 
-Main Accords:
-{accords_text}
+            total_docs += 1
+            total_chunks += len(text_chunks)
 
-Rating: {rating_value} ({rating_count} ratings, {review_count} reviews)
-'''
+    print(f"✅ JSONL 생성 완료: {output_path}")
+    print(f"총 문서 수: {total_docs}")
+    print(f"총 청크 수: {total_chunks}")
+
+if __name__ == "__main__":
+    input_files = [
+        "../data/raw_data/perfumes_complete_man_data.json",
+        "../data/raw_data/perfumes_complete_woman_data.json"
+    ]
+    output_file = "./perfumes_rag.jsonl"
+    convert_perfume_json_to_hybrid_jsonl(input_files, output_file)
+
+"""
+✅ JSONL 생성 완료: ./perfumes_rag.jsonl
+총 문서 수: 1737
+총 청크 수: 7085
+"""

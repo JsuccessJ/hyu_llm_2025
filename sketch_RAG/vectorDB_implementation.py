@@ -3,26 +3,41 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.schema import Document
 
-# 1. 임베딩 모델 정의 (SBERT)
-embed_model = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
-)
+def build_vector_index_from_jsonl(jsonl_path, save_path="./perfume_faiss_index"):
+    embed_model = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    )
+    documents = []
+    
+    # jsonl 파일 읽기
+    with open(jsonl_path, "r", encoding="utf-8") as f:
+        for line in f:
+            record = json.loads(line)
+            perfume_id = record.get("perfume_id")
+            metadata = record.get("metadata", {})
+            chunks = record.get("text_chunks", [])
+            
+            # 각 청크마다 Document 객체 생성 (메타 포함)
+            for idx, chunk_text in enumerate(chunks):
+                doc = Document(
+                    page_content=chunk_text,
+                    metadata={
+                        "perfume_id": perfume_id,
+                        "chunk_index": idx,
+                        **metadata
+                    }
+                )
+                documents.append(doc)
+    
+    # FAISS 벡터 DB에 임베딩 & 저장
+    vector_store = FAISS.from_documents(documents, embed_model)
+    
+    # 인덱스 저장
+    vector_store.save_local(save_path)
+    print(f"✅ 벡터 인덱스가 '{save_path}'에 저장됨.")
+    print(f"총 청크 수: {len(documents)}")
 
-# 2. JSONL 불러오기
-jsonl_path = "./perfumes_docs.jsonl"
-docs = []
+if __name__ == "__main__":
+    jsonl_file = "./perfumes_rag.jsonl"
+    build_vector_index_from_jsonl(jsonl_file)
 
-with open(jsonl_path, "r", encoding="utf-8") as f:
-    for line in f:
-        item = json.loads(line)
-        text = item.pop("text_chunk")
-        metadata = item  # 나머지는 메타데이터
-        docs.append(Document(page_content=text, metadata=metadata))
-
-# 3. FAISS 벡터 DB 생성
-vector_store = FAISS.from_documents(docs, embedding=embed_model)
-
-# 4. 저장 (로컬 디스크에)
-vector_store.save_local("perfume_faiss_index")
-
-print("✅ 벡터 DB 저장 완료 (디렉토리: perfume_faiss_index)")
