@@ -34,6 +34,17 @@ import os
 #     ("샤넬 블루", 2)     # 브랜드(샤넬) + 향계열(우디) = 2점
 # --> 디올 자도르, 샤넬 No.5가 최대 k 개 (현재는 best_perfumes[:5])가 context에 입력
 
+# get_perfume_context
+# 선택된 향수들의 상세 정보 포맷팅
+# 브랜드, 타겟, 평점, 리뷰 수, 향 계열 정보 포함
+# strength 내림차순 정렬
+# accord 이름+strength 포맷으로 추출 (중복 제거)
+# 결과 예시 
+# 1. 샤넬 No.5 (브랜드: Chanel, 타겟: 여성, 평점: 4.7, 리뷰: 1200, 주요향(강한순): 플로럴(70.00%), 파우더리(55.50%), 알데하이드(40.00%))
+# 2. 디올 자도르 (브랜드: Dior, 타겟: 여성, 평점: 4.5, 리뷰: 900, 주요향(강한순): 플로럴(65.00%), 프루티(50.00%), 머스크(30.00%))
+# 3. 샤넬 블루 (브랜드: Chanel, 타겟: 남성, 평점: 4.6, 리뷰: 800, 주요향(강한순): 우디(60.00%), 시트러스(45.00%), 스파이시(35.00%))
+
+
 class Neo4jRetrieval:
     def __init__(self, uri: str = None, username: str = None, password: str = None):
         # Neo4j 연결
@@ -139,15 +150,31 @@ class Neo4jRetrieval:
             query = """
             MATCH (p:Perfume)
             WHERE p.name IN $names
+            OPTIONAL MATCH (p)-[ha:HAS_ACCORD]->(a:Accord)
             OPTIONAL MATCH (p)-[:HAS_BRAND]->(b:Brand)
             OPTIONAL MATCH (p)-[:FOR_TARGET]->(t:Target)
-            OPTIONAL MATCH (p)-[:HAS_ACCORD]->(a:Accord)
-            RETURN p.name as name, b.name as brand, t.name as target, collect(a.name) as accords, p.rating_value as rating, p.review_count as reviews
+            RETURN p.name as name, b.name as brand, t.name as target, 
+                   collect(DISTINCT {accord: a.name, strength: ha.strength}) as accords, 
+                   p.rating_value as rating, p.review_count as reviews
             """
             results = [dict(record) for record in session.run(query, names=perfume_names)]
         context = ""
         for i, p in enumerate(results, 1):
-            context += f"{i}. {p['name']} (브랜드: {p.get('brand', '-')}, 타겟: {p.get('target', '-')}, 평점: {p.get('rating', '-')}, 리뷰: {p.get('reviews', '-')}, 주요향: {', '.join(p.get('accords', []))})\n"
+            # strength가 None이 아닌 것만, % 떼고 float 변환, 내림차순 정렬
+            accord_strengths = [
+                (a['accord'], float(str(a['strength']).replace('%',''))) 
+                for a in p.get('accords', []) if a['accord'] and a['strength'] is not None
+            ]
+            # strength 내림차순 정렬
+            accord_strengths.sort(key=lambda x: x[1], reverse=True)
+            # accord 이름+strength 포맷으로 추출 (중복 제거)
+            seen = set()
+            sorted_accords = []
+            for name, strength in accord_strengths:
+                if name not in seen:
+                    sorted_accords.append(f"{name}({strength:.2f}%)")
+                    seen.add(name)
+            context += f"{i}. {p['name']} (브랜드: {p.get('brand', '-')}, 타겟: {p.get('target', '-')}, 평점: {p.get('rating', '-')}, 리뷰: {p.get('reviews', '-')}, 주요향(강한순): {', '.join(sorted_accords)})\n"
         return context
 
     def test_connection(self) -> bool:

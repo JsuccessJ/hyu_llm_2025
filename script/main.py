@@ -13,7 +13,7 @@ def main():
     NEO4J_USER = os.getenv("NEO4J_USER")
     NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
     MODEL_ID = os.getenv("MODEL_ID")
-    # http://@서버IP:7474/
+    # neo4j 브라우저 접속 http://@서버IP:7474/
     
     try:
         # GraphRAG 시스템 초기화

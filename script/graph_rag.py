@@ -92,6 +92,7 @@ class GraphRAG:
             context = self.retrieval.get_perfume_context(perfume_names)
             
             print(f"🎯 찾은 향수들: {perfume_names}")
+            print(f"디버깅용 컨텍스트: {context}")
             
             # 3. 개선된 프롬프트 작성
             prompt = self._create_prompt(user_query, context, keywords)
