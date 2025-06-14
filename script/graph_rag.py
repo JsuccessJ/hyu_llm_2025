@@ -75,27 +75,11 @@ class GraphRAG:
     def ask(self, user_query: str) -> str:
         """사용자 질문에 대한 향수 추천 응답 생성"""
         try:
-            # 1. 키워드 추출 및 관련 노드 검색
-            keywords = self.retrieval.extract_keywords(user_query)
-            print(f"🔍 추출된 키워드: {keywords}")
-            
-            brands = self.retrieval.find_similar_nodes(keywords, "Brand")
-            targets = self.retrieval.find_similar_nodes(keywords, "Target")
-            accords = self.retrieval.find_similar_nodes(keywords, "Accord")
-            
-            print(f"📊 검색된 브랜드: {brands}")
-            print(f"📊 검색된 타겟: {targets}")
-            print(f"📊 검색된 어코드: {accords}")
-            
-            # 2. 향수 검색 및 컨텍스트 생성
-            perfume_names = self.retrieval.get_perfumes_by_nodes(brands, targets, accords)
-            context = self.retrieval.get_perfume_context(perfume_names)
-            
-            print(f"🎯 찾은 향수들: {perfume_names}")
-            print(f"디버깅용 컨텍스트: {context}")
+            # Graph RAG 방식으로 검색
+            graph_rag_response = self.retrieval.search_graph_rag(user_query)
             
             # 3. 개선된 프롬프트 작성
-            prompt = self._create_prompt(user_query, context, keywords)
+            prompt = self._create_prompt(user_query, graph_rag_response)
             
             # 4. LLM 응답 생성
             outputs = self.pipeline(
@@ -111,13 +95,16 @@ class GraphRAG:
             full_response = outputs[0]["generated_text"]
             clean_response = self._extract_generated_response(full_response, prompt)
             
+            print("===== LLM에 전달되는 최종 컨텍스트 =====")
+            print(graph_rag_response)
+            
             return clean_response
             
         except Exception as e:
             print(f"❌ 응답 생성 중 오류: {e}")
             return "죄송합니다. 향수 추천 중 문제가 발생했습니다. 다시 시도해 주세요."
     
-    def _create_prompt(self, user_query: str, context: str, keywords: List[str]) -> str:
+    def _create_prompt(self, user_query: str, context: str) -> str:
         """향수 추천을 위한 최적화된 프롬프트 생성"""
         
         # 컨텍스트가 없는 경우 처리
@@ -133,15 +120,16 @@ class GraphRAG:
         # 일반적인 경우 프롬프트
         return f"""당신은 전문적이고 친근한 향수 추천 전문가입니다.
 
-        다음 사용자 질문과 검색된 향수 정보를 바탕으로 향수 추천을 한국어로 해주세요:
+        다음 사용자 질문과 Graph RAG 검색 결과를 바탕으로 향수 추천을 한국어로 해주세요:
         답변에 포함할 내용 :
         - 향수의 구체적인 특징(브랜드, 향조, 평점 등) 포함
-        - 주어진 검색된 향수 정보를 적극 활용할 것
+        - 주어진 Graph RAG 검색 결과를 적극 활용할 것
         - 거짓 정보는 절대 포함하지 않음
+        - 검색 결과의 점수와 경로 정보를 참고하여 설명할 것
 
         사용자 질문: {user_query}
 
-        검색된 향수 정보:
+        Graph RAG 검색 결과:
         {context}
 
 
