@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 import os
 
 # =============================
-# Graph RAG 향수 추천 매커니즘 (2024 최신)
+# Graph RAG 향수 추천 매커니즘
 # =============================
 
 # 1. extract_keywords
