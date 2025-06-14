@@ -12,6 +12,8 @@ from typing import List, Dict, Tuple, Optional
 from retrieval import Neo4jRetrieval
 import re
 from dotenv import load_dotenv
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+from peft import PeftModel
 
 # Neo4j 연결 정보
 URI = "bolt://localhost:7687"
@@ -34,12 +36,25 @@ class GraphRAG:
         hf_token = os.getenv('HF_TOKEN')
         self.retrieval = Neo4jRetrieval(neo4j_uri, neo4j_user, neo4j_password)
         self.model_id = model_id
-        self.pipeline = transformers.pipeline(
-            "text-generation",
-            model=model_id,
-            device_map="auto",  # GPU가 있으면 자동으로 사용
-            torch_dtype=torch.float16,  # 메모리 사용량 최적화
+        
+        base_model_path = model_id  # .env에서 읽은 base_model 경로
+        adapter_path = "/home/shcho95/yjllm/llama3_8b/weight/perfume_llama3_8B_v0"  # 어댑터 경로
+
+        model = AutoModelForCausalLM.from_pretrained(
+            base_model_path,
+            torch_dtype=torch.float16,
+            device_map="auto",
             token=hf_token
+        )
+        model = PeftModel.from_pretrained(model, adapter_path)
+        tokenizer = AutoTokenizer.from_pretrained(base_model_path, token=hf_token)
+
+        self.pipeline = pipeline(
+            "text-generation",
+            model=model,
+            tokenizer=tokenizer,
+            device_map="auto",
+            torch_dtype=torch.float16
         )
         print("✅ GraphRAG 시스템이 초기화되었습니다.")
     
