@@ -1,0 +1,309 @@
+실행순서
+1. create_perfume_graph.py 그래프 생성
+2. main.py 실행파일
+
+
+============================================================
+📋 샘플 질문으로 시스템 테스트를 시작합니다
+============================================================
+
+[샘플 1/3] 질문: 샤넬의 여자 플로럴 향수 추천해줘
+----------------------------------------
+🔍 키워드에서 seed node 추출: ['로럴', '여자', '샤넬']
+✅ Seed Brand: Chanel (similarity: 0.795 with '샤넬')
+✅ Seed Target: for women (similarity: 0.861 with '여자')
+✅ Seed Accord: floral (similarity: 0.657 with '여자')
+✅ Seed Accord: violet (similarity: 0.650 with '여자')
+✅ Seed Accord: rose (similarity: 0.660 with '여자')
+✅ Seed Accord: vanilla (similarity: 0.651 with '샤넬')
+✅ Seed Accord: Champagne (similarity: 0.686 with '샤넬')
+  🔗 floral 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Michael Kors Pour Femme Michael Kors for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "L'Eau Kenzo pour Femme Sunlight Edition Limitée Kenzo for women", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "L'Eau d'Issey Solar Violet Issey Miyake for women", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Viridarium Maria Candida Gentile for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "Cheirosa '76 Sol de Janeiro for women and men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  🔗 violet 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'violet', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Roma Fiori Bianchi Laura Biagiotti for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'violet', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "L'Eau d'Issey Solar Violet Issey Miyake for women", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'violet', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Dolce Violet Dolce&Gabbana for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'violet', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Burberry Her Petals Burberry for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'violet', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Musc K Ella K Parfums for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  🔗 rose 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'rose', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Michael Kors Pour Femme Michael Kors for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'rose', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'L.12.12. Rose Eau Intense Lacoste Fragrances for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'rose', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'La Vie Est Belle Rose Extraordinaire Lancôme for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'rose', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Coco Mademoiselle Hair Mist (2023) Chanel for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'rose', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Hawwa Pink Zimaya for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+🌐 그래프 확장 완료: 3856개 경로, 711개 향수, 15개 Accord 체인
+🔗 Seed 기반 체인 보너스 계산: 15개 관련 체인 분석
+🔗 체인 보너스 완료: 10개 향수에 보너스 적용
+===== Top-5 Perfume & Simple Score =====
+1. Coco Mademoiselle Hair Mist (2023) Chanel for women (점수: 23 = 기본:20 + 체인:3)
+2. Cristalle Eau de Parfum (2023) Chanel for women (점수: 21 = 기본:21 + 체인:0)
+3. Chanel No 5 Eau de Parfum 2024 Limited Edition Chanel for women (점수: 20 = 기본:20 + 체인:0)
+4. Gabrielle L'Eau Chanel for women (점수: 20 = 기본:20 + 체인:0)
+5. Michael Kors Pour Femme Michael Kors for women (점수: 18 = 기본:12 + 체인:6)
+===== LLM에 전달되는 최종 컨텍스트 =====
+🔍 사용자 쿼리: '샤넬의 여자 플로럴 향수 추천해줘'
+
+🌱 추출된 Seed Nodes (debug용):
+• Brand: Chanel
+• Target: for women
+• Accord: floral, violet, rose
+
+🌐 그래프 확장 결과 (debug용): 3856개 경로, 15개 체인 발견
+
+🎯 GraphRAG 추천 결과 (debug용):
+
+1. **Coco Mademoiselle Hair Mist (2023) Chanel for women** (점수: 23)
+   • 기본점수: 20점 (경로 20개)
+   • 체인보너스: +3점 🔗
+   • 평점: 4.0
+
+2. **Cristalle Eau de Parfum (2023) Chanel for women** (점수: 21)
+   • 기본점수: 21점 (경로 21개)
+   • 평점: 3.98
+
+3. **Chanel No 5 Eau de Parfum 2024 Limited Edition Chanel for women** (점수: 20)
+   • 기본점수: 20점 (경로 20개)
+   • 평점: 4.04
+
+4. **Gabrielle L'Eau Chanel for women** (점수: 20)
+   • 기본점수: 20점 (경로 20개)
+   • 평점: 3.83
+
+5. **Michael Kors Pour Femme Michael Kors for women** (점수: 18)
+   • 기본점수: 12점 (경로 12개)
+   • 체인보너스: +6점 🔗
+   • 평점: 3.68
+
+📋 LLM이 받는 실제 context):
+1. Gabrielle L'Eau Chanel for women (브랜드: Chanel, 타겟: for women, 평점: 3.83, 리뷰: 36, 주요향(강한순): white floral(100.00%), fruity(72.42%), sweet(72.16%), musky(65.35%), green(63.41%), powdery(53.86%), tuberose(51.21%), woody(50.15%), fresh(49.71%), yellow floral(49.44%))
+2. Cristalle Eau de Parfum (2023) Chanel for women (브랜드: Chanel, 타겟: for women, 평점: 3.98, 리뷰: 37, 주요향(강한순): white floral(100.00%), floral(72.86%), fruity(64.24%), fresh spicy(60.62%), citrus(59.21%), green(58.91%), iris(56.69%), earthy(48.94%), fresh(48.18%), powdery(46.01%))
+3. Chanel No 5 Eau de Parfum 2024 Limited Edition Chanel for women (브랜드: Chanel, 타겟: for women, 평점: 4.04, 리뷰: 7, 주요향(강한순): aldehydic(100.00%), fresh(79.00%), white floral(75.00%), yellow floral(75.00%), iris(67.50%), woody(62.40%), powdery(58.38%), sweet(56.00%), soapy(52.00%), earthy(50.50%))
+4. Michael Kors Pour Femme Michael Kors for women (브랜드: Michael Kors, 타겟: for women, 평점: 3.68, 리뷰: 38, 주요향(강한순): citrus(100.00%), fruity(86.50%), white floral(82.06%), musky(74.32%), soft spicy(69.65%), woody(59.40%), patchouli(57.56%), rose(56.76%), floral(56.53%), green(53.78%))
+5. Coco Mademoiselle Hair Mist (2023) Chanel for women (브랜드: Chanel, 타겟: for women, 평점: 4.00, 리뷰: 4, 주요향(강한순): citrus(100.00%), white floral(80.81%), rose(75.16%), patchouli(69.52%), woody(65.56%), earthy(55.97%), floral(53.71%), sweet(50.32%), warm spicy(49.76%))
+
+🔗 발견된 향료 체인 패턴 (debug용):
+• 인기 체인 TOP3:
+  - floral→woody→sweet (5회)
+  - violet→woody→sweet (5회)
+  - rose→woody→sweet (5회)
+• 중요한 연결 향료 TOP3:
+  - woody (15회)
+
+🤖 추천 결과:
+Gabrielle L'Eau Chanel for women을 추천드립니다. Gabrielle L'Eau Chanel for women은 Floral향으로白花향이 강한 파프루미입니다. 파프루미의 주요 향기는 White Floral, Fruity, Sweet 등입니다. 파프루미의 강한白花향으로 많은 여성들이 이 파프루미를 좋아하는 것 같습니다. 또한, Gabrielle L'Eau Chanel for women은 powdery, tuberose, woody 등 다양한 향이 mixes된 파프루미로, 많은 người들에게 유연한 선택지가 될 것입니다. 샤넬의 고품질과 강한 브랜드 인지도로, Gabrielle L'Eau Chanel for women은 향기 뿐만 아니라 패션 및 Lifestyle에도 많은 영향력을 끼치고 있습니다. 이 파프루미는 White Floral향으로 많은 여성들이 이 파프루미를 선택하는 것 같으며, 또한 Powdery, Tuberose, Woody 등 다양한 향이 mixes된 파프루미로, 개인의 취향에 맞는 선택지가 될 것입니다. 
+ Gabrielle L'Eau Chanel for women의 주요 특징은 다음과 같습니다.
+- 브랜드: Chanel
+- 타겟: for women
+- 평점: 3.83
+- 리뷰: 36
+- 주요향(강한순): white floral(100.00%), fruity(72.42%), sweet(72.16
+----------------------------------------
+
+[샘플 2/3] 질문: 우디 계열의 남성 향수 뭐가 좋아?
+----------------------------------------
+🔍 키워드에서 seed node 추출: ['우디', '남성']
+✅ Seed Target: for men (similarity: 0.876 with '남성')
+✅ Seed Accord: woody (similarity: 0.739 with '우디')
+✅ Seed Accord: marine (similarity: 0.663 with '남성')
+✅ Seed Accord: metallic (similarity: 0.659 with '남성')
+✅ Seed Accord: alcohol (similarity: 0.654 with '남성')
+  🔗 woody 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'earthy', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "The Omniscient Mr Thompson Penhaligon's for men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'vanilla', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "The Omniscient Mr Thompson Penhaligon's for men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'fresh spicy', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "The Omniscient Mr Thompson Penhaligon's for men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'balsamic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "The Omniscient Mr Thompson Penhaligon's for men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'lavender', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "The Omniscient Mr Thompson Penhaligon's for men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  🔗 marine 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'marine', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Eternity Aromatic Essence Calvin Klein for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'marine', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Sea, Sud & Sun Versatile Paris for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'marine', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Cocobay iPiccirilli for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'marine', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Signorina Unica Salvatore Ferragamo for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'marine', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Incandessence Summer Glow Avon for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  🔗 metallic 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'metallic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': '2010 Rosendo Mateu Olfactive Expressions for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'metallic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Radical Rose Extrait Matiere Premiere for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'metallic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Genesis House of Brandt for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'metallic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Oudgasm Vanilla Oud | 36 Eau de Parfum Intense Kayali Fragrances for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'metallic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Al Sandal Areej Le Doré for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+🌐 그래프 확장 완료: 3176개 경로, 1118개 향수, 15개 Accord 체인
+🔗 Seed 기반 체인 보너스 계산: 15개 관련 체인 분석
+🔗 체인 보너스 완료: 12개 향수에 보너스 적용
+===== Top-5 Perfume & Simple Score =====
+1. Zara Man Green Savage Summer Zara for men (점수: 54 = 기본:9 + 체인:45)
+2. The Omniscient Mr Thompson Penhaligon's for men (점수: 26 = 기본:11 + 체인:15)
+3. Najdia Intense Lattafa Perfumes for men (점수: 12 = 기본:12 + 체인:0)
+4. Invictus Parfum Rabanne for men (점수: 12 = 기본:12 + 체인:0)
+5. Yacht Mood Arabian Oud for men (점수: 12 = 기본:12 + 체인:0)
+===== LLM에 전달되는 최종 컨텍스트 =====
+🔍 사용자 쿼리: '우디 계열의 남성 향수 뭐가 좋아?'
+
+🌱 추출된 Seed Nodes (debug용):
+• Target: for men
+• Accord: woody, marine, metallic
+
+🌐 그래프 확장 결과 (debug용): 3176개 경로, 15개 체인 발견
+
+🎯 GraphRAG 추천 결과 (debug용):
+
+1. **Zara Man Green Savage Summer Zara for men** (점수: 54)
+   • 기본점수: 9점 (경로 9개)
+   • 체인보너스: +45점 🔗
+   • 평점: 4.23
+
+2. **The Omniscient Mr Thompson Penhaligon's for men** (점수: 26)
+   • 기본점수: 11점 (경로 11개)
+   • 체인보너스: +15점 🔗
+   • 평점: 4.21
+
+3. **Najdia Intense Lattafa Perfumes for men** (점수: 12)
+   • 기본점수: 12점 (경로 12개)
+   • 평점: 4.31
+
+4. **Invictus Parfum Rabanne for men** (점수: 12)
+   • 기본점수: 12점 (경로 12개)
+   • 평점: 4.29
+
+5. **Yacht Mood Arabian Oud for men** (점수: 12)
+   • 기본점수: 12점 (경로 12개)
+   • 평점: 4.26
+
+📋 LLM이 받는 실제 context):
+1. Najdia Intense Lattafa Perfumes for men (브랜드: Lattafa Perfumes, 타겟: for men, 평점: 4.31, 리뷰: 35, 주요향(강한순): fruity(100.00%), aromatic(98.01%), fresh spicy(77.15%), sweet(77.01%), marine(74.26%), green(67.75%), fresh(66.58%), woody(63.78%), warm spicy(55.25%), tropical(54.84%))
+2. Zara Man Green Savage Summer Zara for men (브랜드: Zara, 타겟: for men, 평점: 4.23, 리뷰: 9, 주요향(강한순): citrus(100.00%), vanilla(91.25%), aromatic(78.13%), amber(73.75%), sweet(65.00%), fresh spicy(65.00%), warm spicy(51.00%), woody(45.75%))
+3. Yacht Mood Arabian Oud for men (브랜드: Arabian Oud, 타겟: for men, 평점: 4.26, 리뷰: 18, 주요향(강한순): citrus(100.00%), aromatic(81.95%), marine(81.58%), woody(79.74%), powdery(60.95%), white floral(59.47%), fresh spicy(57.63%), salty(50.63%), warm spicy(47.68%), aquatic(45.47%))
+4. Invictus Parfum Rabanne for men (브랜드: Rabanne, 타겟: for men, 평점: 4.29, 리뷰: 263, 주요향(강한순): aromatic(100.00%), musky(98.71%), marine(91.22%), soapy(89.72%), powdery(81.76%), woody(79.30%), lavender(73.96%), aquatic(68.84%), ozonic(57.79%), salty(54.49%))
+5. The Omniscient Mr Thompson Penhaligon's for men (브랜드: Penhaligon's, 타겟: for men, 평점: 4.21, 리뷰: 112, 주요향(강한순): vanilla(100.00%), iris(92.98%), powdery(88.79%), aromatic(72.90%), woody(60.81%), earthy(58.83%), lavender(54.80%), fresh spicy(54.77%), balsamic(49.28%), sweet(48.75%))
+
+🔗 발견된 향료 체인 패턴 (debug용):
+• 인기 체인 TOP3:
+  - marine→woody→sweet (5회)
+  - metallic→woody→sweet (5회)
+  - earthy→woody→sweet (1회)
+• 중요한 연결 향료 TOP3:
+  - woody (15회)
+
+🤖 추천 결과:
+Najdia Intense Lattafa Perfumes for men, Invictus Parfum Rabanne for men, Yacht Mood Arabian Oud for men. 이 세 향수 모두 우디 계열의 강한 향을 가지고 있습니다. 만약에 더 상세한 정보가 필요하실 경우, 각 향수의 주요 향료를 참고하시면 됩니다.
+----------------------------------------
+
+[샘플 3/3] 질문: 바닐라향과 꽃향이 나는 향수 추천해줘
+----------------------------------------
+🔍 키워드에서 seed node 추출: ['꽃향', '바닐라']
+✅ Seed Accord: aromatic (similarity: 0.732 with '꽃향')
+✅ Seed Accord: white floral (similarity: 0.701 with '꽃향')
+✅ Seed Accord: lavender (similarity: 0.684 with '꽃향')
+✅ Seed Accord: fresh spicy (similarity: 0.664 with '꽃향')
+✅ Seed Accord: fruity (similarity: 0.672 with '꽃향')
+✅ Seed Accord: fresh (similarity: 0.654 with '꽃향')
+✅ Seed Accord: floral (similarity: 0.750 with '꽃향')
+✅ Seed Accord: yellow floral (similarity: 0.723 with '꽃향')
+✅ Seed Accord: violet (similarity: 0.716 with '꽃향')
+✅ Seed Accord: rose (similarity: 0.690 with '꽃향')
+✅ Seed Accord: vanilla (similarity: 0.758 with '바닐라')
+✅ Seed Accord: cinnamon (similarity: 0.687 with '바닐라')
+✅ Seed Accord: balsamic (similarity: 0.718 with '바닐라')
+✅ Seed Accord: coconut (similarity: 0.660 with '바닐라')
+✅ Seed Accord: alcohol (similarity: 0.653 with '바닐라')
+✅ Seed Accord: vinyl (similarity: 0.650 with '바닐라')
+✅ Seed Accord: cannabis (similarity: 0.659 with '바닐라')
+✅ Seed Accord: wine (similarity: 0.685 with '바닐라')
+  🔗 aromatic 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'aromatic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "The Omniscient Mr Thompson Penhaligon's for men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'aromatic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Amber Oud Black Edition Al Haramain Perfumes for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'aromatic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Fleur d’Oh OHTOP for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'aromatic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Viridarium Maria Candida Gentile for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'aromatic', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Bianco 1968 Valentino for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  🔗 white floral 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'white floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Michael Kors Pour Femme Michael Kors for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'white floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Avon Luck Summer Sparkle Avon for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'white floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Roma Fiori Bianchi Laura Biagiotti for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'white floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Fleur d’Oh OHTOP for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'white floral', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "Cheirosa '76 Sol de Janeiro for women and men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  🔗 lavender 기반 체인 5개 발견
+seed_chains (debug용):
+  1. {'start_accord': 'lavender', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': "The Omniscient Mr Thompson Penhaligon's for men", 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  2. {'start_accord': 'lavender', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Amber Oud Black Edition Al Haramain Perfumes for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  3. {'start_accord': 'lavender', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Goddess Intense Burberry for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  4. {'start_accord': 'lavender', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Eternity Aromatic Essence Calvin Klein for women', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+  5. {'start_accord': 'lavender', 'middle_accord': 'woody', 'end_accord': 'sweet', 'perfume1': 'Calm Bliss Charlotte Tilbury for women and men', 'perfume2': 'Zara Man Green Savage Summer Zara for men'}
+🌐 그래프 확장 완료: 1190개 경로, 964개 향수, 15개 Accord 체인
+🔗 Seed 기반 체인 보너스 계산: 15개 관련 체인 분석
+🔗 체인 보너스 완료: 13개 향수에 보너스 적용
+===== Top-5 Perfume & Simple Score =====
+1. Zara Man Green Savage Summer Zara for men (점수: 46 = 기본:1 + 체인:45)
+2. Amber Oud Black Edition Al Haramain Perfumes for women and men (점수: 8 = 기본:2 + 체인:6)
+3. The Omniscient Mr Thompson Penhaligon's for men (점수: 8 = 기본:2 + 체인:6)
+4. Fleur d’Oh OHTOP for women and men (점수: 8 = 기본:2 + 체인:6)
+5. Calm Bliss Charlotte Tilbury for women and men (점수: 6 = 기본:3 + 체인:3)
+===== LLM에 전달되는 최종 컨텍스트 =====
+🔍 사용자 쿼리: '바닐라향과 꽃향이 나는 향수 추천해줘'
+
+🌱 추출된 Seed Nodes (debug용):
+• Accord: aromatic, white floral, lavender
+
+🌐 그래프 확장 결과 (debug용): 1190개 경로, 15개 체인 발견
+
+🎯 GraphRAG 추천 결과 (debug용):
+
+1. **Zara Man Green Savage Summer Zara for men** (점수: 46)
+   • 기본점수: 1점 (경로 1개)
+   • 체인보너스: +45점 🔗
+   • 평점: 4.23
+
+2. **Amber Oud Black Edition Al Haramain Perfumes for women and men** (점수: 8)
+   • 기본점수: 2점 (경로 2개)
+   • 체인보너스: +6점 🔗
+   • 평점: 4.28
+
+3. **The Omniscient Mr Thompson Penhaligon's for men** (점수: 8)
+   • 기본점수: 2점 (경로 2개)
+   • 체인보너스: +6점 🔗
+   • 평점: 4.21
+
+4. **Fleur d’Oh OHTOP for women and men** (점수: 8)
+   • 기본점수: 2점 (경로 2개)
+   • 체인보너스: +6점 🔗
+   • 평점: 3.25
+
+5. **Calm Bliss Charlotte Tilbury for women and men** (점수: 6)
+   • 기본점수: 3점 (경로 3개)
+   • 체인보너스: +3점 🔗
+   • 평점: 3.4
+
+📋 LLM이 받는 실제 context):
+1. Zara Man Green Savage Summer Zara for men (브랜드: Zara, 타겟: for men, 평점: 4.23, 리뷰: 9, 주요향(강한순): citrus(100.00%), vanilla(91.25%), aromatic(78.13%), amber(73.75%), sweet(65.00%), fresh spicy(65.00%), warm spicy(51.00%), woody(45.75%))
+2. Fleur d’Oh OHTOP for women and men (브랜드: OHTOP, 타겟: for women and men, 평점: 3.25, 리뷰: 1, 주요향(강한순): citrus(100.00%), green(95.88%), aromatic(86.00%), fresh spicy(77.76%), white floral(71.18%), woody(60.47%), sweet(57.18%))
+3. Calm Bliss Charlotte Tilbury for women and men (브랜드: Charlotte Tilbury, 타겟: for women and men, 평점: 3.40, 리뷰: 33, 주요향(강한순): citrus(100.00%), white floral(90.49%), aquatic(78.94%), lavender(66.02%), fresh(65.83%), fresh spicy(64.08%), aromatic(63.11%), woody(62.71%), amber(60.84%), animalic(47.73%))
+4. Amber Oud Black Edition Al Haramain Perfumes for women and men (브랜드: Al Haramain Perfumes, 타겟: for women and men, 평점: 4.28, 리뷰: 42, 주요향(강한순): amber(100.00%), aromatic(64.86%), warm spicy(62.10%), animalic(61.52%), leather(55.71%), woody(48.29%), lavender(48.10%), earthy(44.86%))
+5. The Omniscient Mr Thompson Penhaligon's for men (브랜드: Penhaligon's, 타겟: for men, 평점: 4.21, 리뷰: 112, 주요향(강한순): vanilla(100.00%), iris(92.98%), powdery(88.79%), aromatic(72.90%), woody(60.81%), earthy(58.83%), lavender(54.80%), fresh spicy(54.77%), balsamic(49.28%), sweet(48.75%))
+
+🔗 발견된 향료 체인 패턴 (debug용):
+• 인기 체인 TOP3:
+  - aromatic→woody→sweet (5회)
+  - white floral→woody→sweet (5회)
+  - lavender→woody→sweet (5회)
+• 중요한 연결 향료 TOP3:
+  - woody (15회)
+
+🤖 추천 결과:
+_Barcelonada by Bon Parfumeur (점수: 10)
+   • 기본점수: 5점 (경로 5개)
+   • 체인보너스: +5점 🔗
+   • 평점: 4.5
+Barcelonada는 바닐라와 꽃 향이 넘쳐나는 향수입니다. 바닐라는 고데코의 아름다운 여성들, 꽃은 고데코의 아름다운 성우들에 의해 영롱하게 빛나며, 향은 고데코의 아름다운 밤에 머물러 있습니다. 이 향수는 고데코의 아름다운 밤을 살아가는 모든人的 마음을 움직일 것입니다. 
+고데코의 아름다운 밤, 바닐라 향이 넘쳐나는 여성들, 꽃 향이 넘쳐나는 성우들, 향이 넘쳐나는 밤. 모든 것이 하나로 연결되어있는 Бар셀로나다. 
+BARCELONAДА는 고데코의 아름다운 밤을 살아가는 모든人の 마음을 움직이는 향수입니다. 바닐라 향이 넘쳐나는 여성들, 꽃 향이 넘쳐나는 성우들, 향이 넘쳐나는 밤. 모든 것이 하나로 연결되어있는 BARCELONAДА. 
+BARCELONAДА의 주요 향료는 다음과 같습니다. 
+바닐라, 꽃향, 아로마
