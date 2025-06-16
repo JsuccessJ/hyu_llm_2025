@@ -1,57 +1,104 @@
 import yaml
 from langchain.prompts import PromptTemplate
-
+from transformers import pipeline
 def load_prompts_from_yaml(filepath: str) -> dict:
     with open(filepath, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
 
-    prompt_templates = {}
-    # 프롬프트별 필요한 변수 맵 (예시)
-    input_vars_map = {
-        "perfume_summary": ["perfume_name"],
-        "recommendation_scenario": ["scenario_description"],
-        "note_description": ["perfume_name"],
-        "brand_specific": ["brand_name", "ingredient"],
-        "season_time": ["season_or_time"],
-        "mood_atmosphere": ["mood_description"],
-        "basic_prompt": ["query"],  # 기본 프롬프트는 그냥 query만
+    # 'basic_prompt' 항목만 로드
+    if "basic_prompt" not in data:
+        raise ValueError("YAML 파일에 'basic_prompt' 항목이 없습니다.")
+
+    val = data["basic_prompt"]
+
+    if isinstance(val, dict):
+        prompt_str = val.get("template")
+    elif isinstance(val, str):
+        prompt_str = val
+    else:
+        raise ValueError(f"'basic_prompt' 형식이 올바르지 않습니다: {type(val)}")
+
+    if not isinstance(prompt_str, str):
+        raise ValueError(f"'basic_prompt' 템플릿이 문자열이 아닙니다: {type(prompt_str)}")
+
+    # PromptTemplate 하나만 반환해도 되지만 dict 형태 유지
+    return {
+        "basic_prompt": PromptTemplate(
+            template=prompt_str,
+            input_variables=["context", "input"]
+        )
     }
 
-    for key, val in data.items():
-        prompt_str = val.get("template")
-        if not isinstance(prompt_str, str):
-            raise ValueError(f"Prompt '{key}'의 template이 문자열이 아닙니다: {type(prompt_str)}")
+# # ✅ 프롬프트 템플릿 로더
+# def load_prompts_from_yaml(filepath: str) -> dict:
+#     with open(filepath, "r", encoding="utf-8") as f:
+#         data = yaml.safe_load(f)
 
-        input_vars = input_vars_map.get(key, ["query"])  # 기본은 query 변수만
+#     prompt_templates = {}
+#     # 내부 분류 키 → 필요한 변수
+#     input_vars_map = {
+#         "perfume_summary": ["perfume_name"],
+#         "recommendation_scenario": ["scenario_description"],
+#         "note_description": ["perfume_name"],
+#         "brand_specific": ["brand_name", "ingredient"],
+#         "season_time": ["season_or_time"],
+#         "mood_atmosphere": ["mood_description"],
+#         "basic_prompt": ["context", "query"],
+#     }
 
-        prompt_templates[key] = PromptTemplate(
-            template=prompt_str,
-            input_variables=input_vars,
-        )
-    return prompt_templates
+#     for key, val in data.items():
+#         if isinstance(val, dict):
+#             prompt_str = val.get("template")
+#         elif isinstance(val, str):
+#             prompt_str = val
+#         else:
+#             raise ValueError(f"Prompt '{key}' 형식이 올바르지 않습니다: {type(val)}")
+
+#         if not isinstance(prompt_str, str):
+#             raise ValueError(f"Prompt '{key}'의 template이 문자열이 아닙니다: {type(prompt_str)}")
+
+#         input_vars = input_vars_map.get(key, ["query","context"])
+#         prompt_templates[key] = PromptTemplate(
+#             template=prompt_str,
+#             input_variables=input_vars,
+#         )
+
+#     return prompt_templates
 
 
-def classify_query(query: str) -> str:
-    query_lower = query.lower()
-    # 간단한 키워드 기반 분류 예시
-    if "kind of scent" in query_lower or "what scent" in query_lower:
-        return "perfume_summary"
-    if "recommend" in query_lower or "suggest" in query_lower:
-        return "recommendation_scenario"
-    if "note" in query_lower:
-        return "note_description"
-    if "brand" in query_lower or "parfums de marly" in query_lower:
-        return "brand_specific"
-    if "season" in query_lower or "spring" in query_lower or "winter" in query_lower:
-        return "season_time"
-    if "mood" in query_lower or "atmosphere" in query_lower or "sweet" in query_lower or "warm" in query_lower:
-        return "mood_atmosphere"
-    return "basic_prompt"
+# # ✅ Zero-shot 분류 파이프라인 설정
+# classifier = pipeline(
+#     "zero-shot-classification",
+#     model="joeddav/xlm-roberta-large-xnli"
+# )
 
+# # ✅ 자연어 라벨 → 내부 분류 키
+# label_map = {
+#     "향수 요약": "perfume_summary",
+#     "추천 상황": "recommendation_scenario",
+#     "노트 설명": "note_description",
+#     "브랜드 관련": "brand_specific",
+#     "계절 또는 시간대": "season_time",
+#     "기분이나 분위기": "mood_atmosphere",
+#     "기타 일반 질문": "basic_prompt",
+# }
+# labels_ko = list(label_map.keys())
+
+# # ✅ 제로샷 분류 함수
+# def classify_query(query: str) -> str:
+#     result = classifier(
+#         query,
+#         candidate_labels=labels_ko,
+#         hypothesis_template="이 문장은 {}에 대한 질문이다."
+#     )
+#     top_label_ko = result["labels"][0]
+#     return label_map.get(top_label_ko, "basic_prompt")
+
+
+# ✅ 안전한 프롬프트 포매팅 유틸
 def generate_prompt(prompts: dict, prompt_type: str, **kwargs) -> str:
     prompt_template = prompts.get(prompt_type)
     if prompt_template:
-        # 일부 kwargs가 없어도 무시하고 기본값으로 빈 문자열 넣을 수도 있음
         safe_kwargs = {k: kwargs.get(k, "") for k in prompt_template.input_variables}
         return prompt_template.format(**safe_kwargs)
     return ""
