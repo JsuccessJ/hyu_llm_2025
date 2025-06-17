@@ -1,56 +1,7 @@
-perfume_summary:
-  template: |
-    You are a knowledgeable perfume expert.
-    Use the following context to provide a concise summary of the perfume named "{perfume_name}", focusing on its scent profile and main accords.
-
-    Context:
-    {context}
-
-recommendation_scenario:
-  template: |
-    You are a helpful fragrance advisor.
-    Use the following context to recommend perfumes suitable for "{scenario_description}" and explain why they fit well.
-
-    Context:
-    {context}
-
-note_description:
-  template: |
-    You are an expert on perfume composition.
-    Using the following context, describe the main notes of the perfume "{perfume_name}", including top, heart, and base notes.
-
-    Context:
-    {context}
-
-brand_specific:
-  template: |
-    You are a fragrance specialist knowledgeable about the brand "{brand_name}".
-    From the context below, list perfumes from this brand containing "{ingredient}" and describe how the ingredient is used.
-
-    Context:
-    {context}
-
-season_time:
-  template: |
-    You are a scent consultant specialized in seasonal fragrances.
-    Refer to the following context to suggest perfumes best suited for "{season_or_time}" with explanations on key accords.
-
-    Context:
-    {context}
-
-mood_atmosphere:
-  template: |
-    You are a perfume expert focusing on emotional qualities.
-    Using the context below, recommend perfumes evoking a "{mood_description}" mood, detailing contributing notes.
-
-    Context:
-    {context}
-
-basic_prompt:
-  template: |
-    You are a perfume assistant.
-    Use the following context to answer the question.
-
-    Question: {query}
-    Context:
-    {context}
+basic_prompt: |
+  아래 영어 설명을 참고해서, 사용자의 한국어 질문에 대해 답변해줘.
+  ===
+  {context}
+  ===
+  질문: {input}
+  답변:

@@ -5,7 +5,7 @@ from langchain.schema import Document
 
 def build_vector_index_from_jsonl(jsonl_path, save_path="./perfume_faiss_index"):
     embed_model = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+        model_name="BAAI/bge-m3"
     )
     documents = []
     
@@ -20,7 +20,7 @@ def build_vector_index_from_jsonl(jsonl_path, save_path="./perfume_faiss_index")
             # 각 청크마다 Document 객체 생성 (메타 포함)
             for idx, chunk_text in enumerate(chunks):
                 doc = Document(
-                    page_content=chunk_text,
+                    page_content=f"passage: {chunk_text}",                        # page_content=chunk_text, 이였는데 성능향상TIP으로 다음처럼 수정함
                     metadata={
                         "perfume_id": perfume_id,
                         "chunk_index": idx,
@@ -41,3 +41,7 @@ if __name__ == "__main__":
     jsonl_file = "./perfumes_rag.jsonl"
     build_vector_index_from_jsonl(jsonl_file)
 
+"""
+✅ 벡터 인덱스가 './perfume_faiss_index'에 저장됨.
+총 청크 수: 7085
+"""
