@@ -98,6 +98,10 @@ class Neo4jRetrieval:
         keywords = [word for word, pos in tokens 
                if pos in ['Noun', 'Verb', 'Adjective'] 
                and word not in stopwords]
+        
+        print(f"  📝 형태소 분석 결과: {tokens}")
+        print(f"  🔑 추출된 키워드: {list(set(keywords))}")
+        
         return list(set(keywords))
 
     def cosine_similarity(self, emb1, emb2):
@@ -190,15 +194,17 @@ class Neo4jRetrieval:
             'Accord': []
         }
         
-        print(f"🔍 키워드에서 seed node 추출: {keywords}")
+        print(f"  🔍 키워드에서 seed node 추출 시작: {keywords}")
         
         for label in ['Brand', 'Target', 'Accord']:
             if label == 'Brand':
-                threshold = 0.75
+                threshold = 0.8
             elif label == 'Target':
                 threshold = 0.8
             else:
-                threshold = 0.65
+                threshold = 0.8
+            
+            print(f"    📊 {label} 노드 검색 중 (임계값: {threshold})...")
             
             # 임계값 이상인 노드만 seed로 선택
             filtered_seeds = []
@@ -210,10 +216,12 @@ class Neo4jRetrieval:
                     similarity = self.cosine_similarity(kw_emb, node['embedding'])
                     if similarity >= threshold and node['name'] not in filtered_seeds:
                         filtered_seeds.append(node['name'])
-                        print(f"✅ Seed {label}: {node['name']} (similarity: {similarity:.3f} with '{keyword}')")
+                        print(f"      ✅ Seed {label}: {node['name']} (유사도: {similarity:.3f} with '{keyword}')")
             
             seed_nodes[label] = filtered_seeds[:3]  # 최대 3개씩
+            print(f"    📋 최종 {label} Seeds: {seed_nodes[label]}")
         
+        print(f"  🌱 전체 Seed Nodes: {seed_nodes}")
         return seed_nodes
 
     def expand_graph(self, seed_nodes: Dict[str, List[str]]) -> Dict:
@@ -338,7 +346,10 @@ class Neo4jRetrieval:
                         for i, chain in enumerate(seed_chains, 1):
                             print(f"  {i}. {chain}")
             expanded_graph['accord_chains'] = accord_chains
-        print(f"🌐 그래프 확장 완료: {len(expanded_graph['paths'])}개 경로, {len(expanded_graph['perfumes'])}개 향수, {len(expanded_graph['accord_chains'])}개 Accord 체인")
+        print(f"  🌐 그래프 확장 완료:")
+        print(f"    📊 총 {len(expanded_graph['paths'])}개 경로 발견")
+        print(f"    🍾 총 {len(expanded_graph['perfumes'])}개 향수 발견")
+        print(f"    🔗 총 {len(expanded_graph['accord_chains'])}개 Accord 체인 발견")
         return expanded_graph
 
 
@@ -435,9 +446,11 @@ class Neo4jRetrieval:
         ranked_perfumes.sort(key=lambda x: (x['final_score'], x['avg_rating']), reverse=True)
         
         # 디버그 출력
-        print("===== Top-5 Perfume & Simple Score =====")
+        print("  🏆 Top-5 향수 점수 계산 결과:")
         for i, p in enumerate(ranked_perfumes[:5], 1):
-            print(f"{i}. {p['perfume']} (점수: {p['final_score']} = 기본:{p['base_score']} + 체인:{p['chain_bonus']})")
+            print(f"    {i}. {p['perfume']}")
+            print(f"       📊 최종점수: {p['final_score']} = 기본점수:{p['base_score']} + 체인보너스:{p['chain_bonus']}")
+            print(f"       ⭐ 평점: {p['avg_rating']}, 경로수: {p['path_count']}")
         
         return ranked_perfumes[:5]
 
@@ -453,7 +466,8 @@ class Neo4jRetrieval:
         seed_brands = set(seed_nodes.get('Brand', []))
         seed_targets = set(seed_nodes.get('Target', []))
         
-        print(f"🔗 Seed 기반 체인 보너스 계산: {len(accord_chains)}개 관련 체인 분석")
+        print(f"  🔗 Seed 기반 체인 보너스 계산:")
+        print(f"    📊 {len(accord_chains)}개 관련 체인 분석 중...")
         
         for chain in accord_chains:
             accords = [chain['start_accord'], chain['middle_accord'], chain['end_accord']]
@@ -471,7 +485,7 @@ class Neo4jRetrieval:
                     #디버그용
                     #print(f"    ❌ {perfume}: 체인 발견했지만 관련성 부족으로 제외")
         
-        print(f"🔗 체인 보너스 완료: {len(chain_bonus)}개 향수에 보너스 적용")
+        print(f"    ✅ 체인 보너스 완료: {len(chain_bonus)}개 향수에 보너스 적용")
         return chain_bonus
 
     def _is_chain_perfume_relevant(self, perfume_name: str, seed_brands: set, seed_targets: set) -> bool:

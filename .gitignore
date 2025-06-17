@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,linux,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,linux,visualstudiocode
 
+
+#모델
+/llama3_8b/
+
 # github에 공개하면 안되는 자료 및 데이터
 ### self ###
 *.env
